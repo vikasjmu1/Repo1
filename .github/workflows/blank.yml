@@ -28,7 +28,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-  
+
+      - name: Comment on PR
+        env:
+           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          curl -X POST -H "Authorization: token $GITHUB_TOKEN" \
+          -d '{"body": "Thank you Vikas"}' \
+          https://api.github.com/user
       - name: Create changes
         run:  |
           git config --global user.email "vikas.sharma2009@live.com"
