@@ -44,7 +44,24 @@ jobs:
           echo "New Changes" >> changes.txt
           git add changes.txt
           git commit -m "Add changes"
-      
+
+      - name: checkout another repo
+        uses: actions/checkout@v2
+        with:
+          repository: Repo2
+          token: ${{ secrests.GH_PAT }}
+          path: other-repo
+
+      - name: Set python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Run python
+        run:  |
+          cd other-repo
+          python script.py
+          
       - name: Use Github API with PAT
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
