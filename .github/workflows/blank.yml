@@ -44,7 +44,6 @@ jobs:
           echo "New Changes" >> changes.txt
           git add changes.txt
           git commit -m "Add changes"
-        #  git push origin feature --force
       
       - name: Use Github API with PAT
         env:
