@@ -29,7 +29,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
-      - name: Push changes to Feature1 from Feature branch
+      - name: Push changes to Feature1 from feature branch
         run:  |
           git config --global user.email "vikas.sharma2009@live.com"
           git config --global user.name "vikasjmu1"
@@ -41,7 +41,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          git push origin feature-branch          
+          git push origin feature       
       
       - name: Use Github API with PAT
         env:
