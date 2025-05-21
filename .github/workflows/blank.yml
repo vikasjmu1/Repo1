@@ -33,11 +33,10 @@ jobs:
         run:  |
           git config --global user.email "vikas.sharma2009@live.com"
           git config --global user.name "vikasjmu1"
-          git pull
           echo "New Changes" >> changes.txt
           git add changes.txt
           git commit -m "Add changes"
-          git push origin master
+          git push origin feature --force
       
       - name: Use Github API with PAT
         env:
