@@ -22,13 +22,22 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    #runs-on: ubuntu-latest
-    runs-on: windows-latest
-
+    runs-on: ubuntu-latest
+    
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
+  
+      - name: Create changes
+        run:  |
+          git config --global user.email "vikas.sharma2009@live.com"
+          git config --global user.name "vikasjmu1"
+          git pull
+          echo "New Changes" >> changes.txt
+          git add changes.txt
+          git commit -m "Add changes"
+          #git push origin feature
       
       - name: Use Github API with PAT
         env:
