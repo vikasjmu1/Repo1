@@ -28,14 +28,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
+  
 
-      - name: Push changes to Feature1 from feature branch
+      - name: Push changes to main from feature branch
         run:  |
           git config --global user.email "vikas.sharma2009@live.com"
           git config --global user.name "vikasjmu1"
           echo "New Changes" >> changes.txt
           git add changes.txt
-          git commit -m "Add chnages"
+          git commit -m "Add changes"
 
       - name: Push changes
         env:
