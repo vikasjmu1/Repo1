@@ -34,6 +34,7 @@ jobs:
           git config --global user.email "vikas.sharma2009@live.com"
           git config --global user.name "vikasjmu1"
           git init
+          git remote add origin "https://github.com/vikasjmu1/Repo1/"
           echo "New Changes" >> changes.txt
           git add changes.txt
           git commit -m "Add changes"
