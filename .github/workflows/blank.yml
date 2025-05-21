@@ -48,7 +48,7 @@ jobs:
       - name: checkout another repo
         uses: actions/checkout@v2
         with:
-          repository: Repo2
+          repository: vikasjmu1/Repo2
           token: ${{ secrets.GH_PAT }}
           path: other-repo
 
