@@ -36,12 +36,7 @@ jobs:
           echo "New Changes" >> changes.txt
           git add changes.txt
           git commit -m "Add changes"
-
-      - name: Push changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-        run: |
-            git push origin feature    
+          git push origin Feature1   
       
       - name: Use Github API with PAT
         env:
